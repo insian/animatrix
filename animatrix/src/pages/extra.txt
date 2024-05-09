@@ -1,0 +1,57 @@
+import { TextField, ThemeProvider, createTheme } from '@mui/material';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            light: '#fff',
+            main: '#fff',
+            dark: "#fff",
+            contrastText: "#fff",
+        },
+        secondary: {
+            main: "#fff",
+        }
+    }
+})
+
+<ThemeProvider theme={theme}>
+    <form ref={form} onSubmit={sendEmail} autoComplete='off' className='w-3/4 mx-auto'>
+        <TextField id="outlined-basic" label="Name" variant="outlined" size="small" margin="normal" type="text" required
+        sx={{ width:"calc(100%)",
+                input: { color: 'white' }, 
+                "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                "& .MuiOutlinedInput-root": {
+                "& > fieldset": { height:'3rem', border: '2px solid', borderColor: "white" , borderRadius: "1rem" },
+                },
+                "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                        borderColor: "white",
+                    }},
+            }} />
+        <TextField id="outlined-basic" label="Email" variant="outlined" size="small" margin="normal" type="email" required
+        sx={{ width:"calc(100%)",
+                input: { color: 'white' }, 
+                "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                "& .MuiOutlinedInput-root": {
+                "& > fieldset": { height:'3rem', border: '2px solid', borderColor: "white" , borderRadius: "1rem" },
+                },
+                "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                        borderColor: "white",
+                    }},
+            }} />
+        <TextField id="outlined-basic" label="Feedback" variant="outlined" size="small" margin="normal" type="text" required
+        multiline rows={5}
+        sx={{ width:"calc(100%)",
+                input: { color: 'white' }, 
+                "& .MuiInputLabel-root": {color: 'white'},//styles the label
+                "& .MuiOutlinedInput-root": {
+                "& > fieldset": { border: '2px solid', borderColor: "white" , borderRadius: "1rem" },
+                },
+                "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                        borderColor: "white",
+                    }},
+            }} />
+    </form>
+</ThemeProvider>
